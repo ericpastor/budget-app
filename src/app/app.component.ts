@@ -57,7 +57,6 @@ export class AppComponent {
       .getTransactions()
       .subscribe((transactions) => {
         this.transactions = transactions;
-        console.log(transactions);
       });
 
     this.savingsSubscription = this.savingsService
