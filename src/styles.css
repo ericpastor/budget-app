@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap");
+
+* {
+  padding: 0;
+  margin: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(8, 12, 17);
+  color: #fff;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  font-family: "Rubik Mono One", monospace;
+}
+
+p {
+  font-size: 0.75rem;
+}
+h1 {
+  font-weight: 900;
+}
+h1,
+h2,
+h3 {
+  background-color: #b3ffd3;
+  background: linear-gradient(
+    to right,
+    #b3ffd3 10%,
+    rgba(1, 255, 128, 0.5) 70%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-img {
+  width: 100px;
+  height: auto;
+  margin: auto;
+}
+
+.grid-container {
+  max-width: 1000px;
+  margin: 1.5rem;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-areas:
+    "box1 box1 box2 box2 box2 box2"
+    "box3 box3 box4 box4 box5 box5"
+    "box6 box6 box6 box6 box6 box6";
+}
+
+.grid-item {
+  background-color: #09111cff;
+  background: linear-gradient(
+    to bottom,
+    rgb(22, 32, 49) 10%,
+    rgb(8, 12, 17) 70%
+  );
+  padding: 0.5rem 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 200s ease;
+  border: 1px solid rgb(21, 34, 53);
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  background-color: #121213;
+}
+
+.grid-item-1 {
+  grid-area: box1;
+  img {
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(132, 1, 255, 0.5);
+  }
+  button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 1px;
+    font-weight: 900;
+    border: 1px solid rgb(21, 34, 53);
+    border-radius: 1.5rem;
+    background: transparent;
+    color: white;
+    height: 1.7;
+    width: 75%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+    align-self: center;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: #b3ffd3;
+      background: linear-gradient(
+        to right,
+        #c7b3ff 10%,
+        rgba(132, 1, 255, 0.5) 70%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.grid-item-2 {
+  grid-area: box2;
+}
+
+.grid-item-3 {
+  grid-area: box3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: flex-end;
+}
+
+.grid-item-4 {
+  grid-area: box4;
+  div {
+    margin-bottom: 0.5rem;
+    text-align: start;
+  }
+
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 2, "wght" 400, "GRAD" 0, "opsz" 24;
+    color: rgb(80, 255, 80);
+  }
+
+  h2 {
+    font-family: "Rubik Mono One", monospace;
+  }
+}
+
+.grid-item-5 {
+  grid-area: box5;
+  div {
+    margin-bottom: 0.5rem;
+    text-align: start;
+  }
+}
+
+.grid-item-6 {
+  grid-area: box6;
+}
+
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-areas:
+      "box1 box1 box1 box1"
+      "box2 box2 box2 box2"
+      "box3 box3 box3 box3"
+      "box4 box4 box4 box4"
+      "box5 box5 box5 box5"
+      "box6 box6 box6 box6";
+  }
+}

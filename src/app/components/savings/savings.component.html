@@ -1,0 +1,85 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  "
+>
+  <div
+    class="grid-savings"
+    style="display: flex; flex-direction: column; justify-content: center"
+    *ngIf="
+      savings &&
+      savings !== undefined &&
+      savings.amount !== null &&
+      savings.amount !== 0 &&
+      savings.target - savings.amount <= 0
+    "
+  >
+    <p class="congrats" style="margin-top: 30px">Congrats you saved</p>
+    <p class="congrats" style="margin-bottom: 30px">
+      {{ savings.amount | currency : "EUR" : "symbol" : "1.2-2" }}!
+    </p>
+  </div>
+  <div
+    class="grid-savings"
+    *ngIf="
+      savings?.aimDescription &&
+      savings &&
+      savings !== undefined &&
+      savings.amount !== null &&
+      savings.target - savings.amount !== 0
+    "
+  >
+    <div class="grid-savings-item grid-savings-item-3">
+      <p>Savings</p>
+      {{ savings.amount | currency : "EUR" : "symbol" : "1.2-2" }}
+    </div>
+
+    <div class="grid-savings-item grid-savings-item-4">
+      <p>Only left</p>
+      {{ targetRemainig() | currency : "EUR" : "symbol" : "1.2-2" }}
+    </div>
+    <div class="grid-savings-item grid-savings-item-1">
+      <p>my goal</p>
+      {{ savings.aimDescription }}
+    </div>
+    <div class="grid-savings-item grid-savings-item-2">
+      <p>target amount</p>
+      {{ savings.target | currency : "EUR" : "symbol" : "1.2-2" }}
+    </div>
+
+    <form
+      class="grid-savings-item grid-savings-item-6"
+      *ngIf="updateParametersFormDisabled === false"
+    >
+      <label for="updatedTarget">New Target:</label>
+      <input
+        type="text"
+        id="updatedTarget"
+        [(ngModel)]="updatedTarget"
+        name="updatedTarget"
+      />
+      <button type="button" (click)="updateTarget()">Update Target</button>
+      <label for="updatedAimDescription">New Goal:</label>
+      <input
+        type="text"
+        id="updatedAimDescription"
+        [(ngModel)]="updatedAimDescription"
+        name="updatedAimDescription"
+      />
+      <button type="button" (click)="updateAimDescription()">New Goal</button>
+    </form>
+
+    <div class="grid-savings-item grid-savings-item-5">
+      <button (click)="toggleForm()">
+        {{
+          updateParametersFormDisabled === true
+            ? "Change your Savings Panel"
+            : "Hide the update form"
+        }}
+      </button>
+    </div>
+  </div>
+</div>

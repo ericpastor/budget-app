@@ -1,0 +1,33 @@
+<div *ngIf="transaction" class="transaction">
+  <div class="top">
+    <p *ngIf="transaction.createdAt" class="date">
+      {{ transaction.createdAt | date }}
+    </p>
+    <div
+      *ngIf="
+        transaction.description !== 'Money transfered to savings' &&
+        transaction.description !== 'Money transfered to savings'
+      "
+    >
+      <button (click)="removeTransaction()">
+        <img src="assets/removeIcon.svg" alt="cross" />
+      </button>
+    </div>
+  </div>
+
+  <div class="bottom">
+    <p>
+      <span class="date">Description:</span>
+      {{ transaction.description }}
+    </p>
+    <p>
+      <span class="date">Quantity:</span>
+      {{ transaction.quantity | currency : "EUR" : "symbol" : "1.2-2" }}
+    </p>
+    <p>
+      <span class="date">Operation:</span>
+      {{ transaction.operation }}
+    </p>
+  </div>
+  <hr />
+</div>

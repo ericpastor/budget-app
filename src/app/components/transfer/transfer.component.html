@@ -1,0 +1,61 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  "
+>
+  <div class="grid-transaction">
+    <div class="grid-transaction-item grid-transaction-item-1">
+      <label for="amountToTransfer">Amount to transfer:</label>
+      <input type="text" [(ngModel)]="amount" name="amountToTransfer" />
+    </div>
+    <div
+      *ngIf="
+        this.savings &&
+        amount !== null &&
+        this.savings.amount !== null &&
+        this.savings.amount > 0 &&
+        amount <= this.savings.amount
+      "
+      class="grid-transaction-item grid-transaction-item-2"
+    >
+      <button type="button" (click)="transferToBalance(amount)">
+        toBalance
+      </button>
+    </div>
+
+    <div
+      *ngIf="
+        this.savings &&
+        amount !== null &&
+        this.savings.amount !== null &&
+        this.savings.amount > 0 &&
+        amount > this.savings.amount
+      "
+      class="grid-transaction-item grid-transaction-item-2"
+    >
+      <p class="no-money">Not enough money</p>
+    </div>
+    <div
+      *ngIf="balance && amount && balance >= amount"
+      class="grid-transaction-item grid-transaction-item-3"
+    >
+      <button type="button" (click)="transferToSavings(amount)">
+        toSavings
+      </button>
+    </div>
+
+    <div
+      *ngIf="balance && amount && balance < amount"
+      class="grid-transaction-item grid-transaction-item-3"
+    >
+      <p class="no-money">Not enough money</p>
+    </div>
+
+    <div class="grid-transaction-item grid-transaction-item-4">
+      <p>New Transfer</p>
+    </div>
+  </div>
+</div>

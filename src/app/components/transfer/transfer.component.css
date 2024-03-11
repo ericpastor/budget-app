@@ -1,0 +1,102 @@
+.grid-transaction {
+  max-width: 300px;
+  margin: 0.1rem;
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+  grid-template-areas:
+    "box1 box1 box1 box1"
+    "box2 box2 box2 box2"
+    "box3 box3 box3 box3"
+    "box4 box4 box4 box4";
+}
+
+.grid-transaction-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  label {
+    color: rgb(73, 88, 110);
+    align-self: center;
+  }
+  input {
+    background: #09111cff;
+    border: 1px solid rgb(21, 34, 53);
+    border-radius: 0.35rem;
+    padding: 0.2rem;
+    color: rgb(60, 72, 90);
+    text-align: center;
+    outline: none;
+  }
+
+  input:focus {
+    color: white; 
+  }
+
+  button {
+    padding: 10px;
+    font-weight: 900;
+    border: 1px solid rgb(21, 34, 53);
+    border-radius: 1.5rem;
+    background: transparent;
+    color: white;
+    height: 100%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: scale(1.5);
+      background-color: #b3ffd3;
+      background: linear-gradient(
+        to right,
+        #b3ffd3 10%,
+        rgba(1, 255, 128, 0.5) 70%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.grid-transaction-item-1 {
+  grid-area: box1;
+}
+.grid-transaction-item-2 {
+  grid-area: box2;
+}
+.grid-transaction-item-3 {
+  grid-area: box3;
+  margin-bottom: 36px;
+  button {
+    &:hover {
+      transform: scale(1.5);
+      background-color: #b3ffd3;
+      background: linear-gradient(
+        to right,
+        #b3e3ff 10%,
+        rgba(1, 132, 255, 0.5) 70%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.grid-transaction-item-4 {
+  grid-area: box4;
+  text-align: center;
+  margin-bottom: -20px;
+}
+
+.no-money {
+  padding: 10px;
+  font-weight: 900;
+  border: 1px solid rgb(21, 34, 53);
+  border-radius: 1.5rem;
+  background: transparent;
+  color: red;
+  height: 100%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  align-self: center;
+}

@@ -1,0 +1,96 @@
+.grid-savings {
+  max-width: 300px;
+  margin: 0.1rem;
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+  grid-template-areas:
+    "box1 box1 box1 box1 box1 box1"
+    "box2 box2 box2 box3 box3 box3"
+    "box4 box4 box4 box4 box4 box4"
+    "box5 box5 box5 box5 box5 box5";
+}
+
+.grid-savings-item {
+  display: flex;
+  flex-direction: column;
+  /* border-radius: 0.75rem; */
+  overflow: hidden;
+  label {
+    color: rgb(73, 88, 110);
+    align-self: center;
+  }
+  input {
+    background: #09111cff;
+    border: 1px solid rgb(21, 34, 53);
+    border-radius: 0.35rem;
+    padding: 0.2rem;
+    color: rgb(60, 72, 90);
+    text-align: center;
+    outline: none;
+  }
+
+  input:focus {
+    color: white;
+  }
+
+  button {
+    padding: 10px;
+    font-weight: 900;
+    border: 1px solid rgb(21, 34, 53);
+    border-radius: 1.5rem;
+    background: transparent;
+    color: white;
+    height: 100%;
+    cursor: pointer;
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: scale(1.5);
+      background-color: #b3ffd3;
+      background: linear-gradient(
+        to right,
+        #c7b3ff 10%,
+        rgba(132, 1, 255, 0.5) 70%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.grid-savings-item-1 {
+  grid-area: box1;
+  p {
+    margin: auto;
+    font-family: "Fjalla One", sans-serif;
+    font-style: normal;
+    padding: 10px;
+    font-weight: 600;
+    font-size: 2rem;
+    background-color: #b3ffd3;
+    background: linear-gradient(
+      to right,
+      #c7b3ff 10%,
+      rgba(132, 1, 255, 0.5) 70%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+.grid-savings-item-2 {
+  grid-area: box2;
+}
+.grid-savings-item-3 {
+  grid-area: box3;
+}
+
+.grid-savings-item-4 {
+  grid-area: box4;
+  text-align: center;
+}
+
+.grid-savings-item-5 {
+  grid-area: box5;
+  text-align: center;
+}

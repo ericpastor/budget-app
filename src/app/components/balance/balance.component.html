@@ -1,0 +1,10 @@
+<div>
+  <p class="top-title">Total Amount</p>
+  <div *ngIf="balance >= 0" class="amounts">
+    {{ balance | currency : "EUR" : "symbol" : "1.2-2" }}
+  </div>
+  <div *ngIf="balance < 0" class="amounts-red">
+    {{ balance | currency : "EUR" : "symbol" : "1.2-2" }}
+  </div>
+  <p>Balance</p>
+</div>

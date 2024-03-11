@@ -1,0 +1,36 @@
+<div class="grid-container">
+  <div class="grid-item grid-item-1">
+    <button (click)="restart()">Restart</button>
+    <img class="title-img" src="assets/report-money.svg" alt="wallet" />
+    <p>{{ title }}</p>
+  </div>
+
+  <div class="grid-item grid-item-2">
+    <app-saving-panel-form [savings]="savings" />
+    <app-savings [savings]="savings" />
+  </div>
+
+  <div class="grid-item grid-item-3">
+    <app-balance />
+  </div>
+
+  <div class="grid-item grid-item-4">
+    <app-transaction-form />
+  </div>
+
+  <div class="grid-item grid-item-5">
+    <app-transfer />
+  </div>
+
+  <div
+    *ngIf="transactions && transactions.length > 0"
+    class="grid-item grid-item-6"
+  >
+    <app-transaction-list
+      class="transaction-list"
+      [transactionList]="transactions"
+    />
+  </div>
+
+  <router-outlet />
+</div>

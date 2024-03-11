@@ -1,0 +1,50 @@
+<div
+  style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+  "
+>
+  <form (ngSubmit)="addTransaction()" class="grid-transaction">
+    <div class="grid-transaction-item grid-transaction-item-3">
+      <select
+        [(ngModel)]="newTransactionOperation"
+        id="operation"
+        name="operation"
+      >
+        @for (operation of operations; track operation) {
+        <option [value]="operation.value">{{ operation.viewValue }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="grid-transaction-item grid-transaction-item-1">
+      <label for="description">Transaction Description </label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="newTransactionDescription"
+        autocomplete="off"
+      />
+    </div>
+
+    <div class="grid-transaction-item grid-transaction-item-2">
+      <label for="quatity">Quantity</label>
+      <input
+        type="text"
+        id="quantity"
+        name="quantity"
+        [(ngModel)]="newTransactionQuantity"
+        autocomplete="off"
+      />
+    </div>
+    <div class="grid-transaction-item grid-transaction-item-4">
+      <button><span class="material-symbols-outlined"> send </span></button>
+    </div>
+    <div class="grid-transaction-item grid-transaction-item-5">
+      <p>New Transaction</p>
+    </div>
+  </form>
+</div>

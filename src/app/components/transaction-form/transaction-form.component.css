@@ -1,0 +1,90 @@
+.grid-transaction {
+  max-width: fit-content;
+  margin: 0.1rem;
+  display: grid;
+  align-items: center;
+  gap: 0.5rem;
+  grid-template-areas:
+    "box1 box1 box1 box1"
+    "box2 box2 box2 box2"
+    "box3 box3 box3 box4"
+    "box5 box5 box5 box5";
+}
+
+.grid-transaction-item {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  label {
+    color: rgb(73, 88, 110);
+    align-self: center;
+  }
+  input {
+    background: #09111cff;
+    border: 1px solid rgb(21, 34, 53);
+    border-radius: 0.35rem;
+    padding: 0.2rem;
+    color: rgb(60, 72, 90);
+    text-align: center;
+    outline: none;
+  }
+  input:focus {
+    color: white; 
+  }
+}
+
+.grid-transaction-item-1 {
+  grid-area: box1;
+}
+.grid-transaction-item-2 {
+  grid-area: box2;
+}
+.grid-transaction-item-3 {
+  grid-area: box3;
+  select {
+    border: none;
+    border-radius: 0.35rem;
+    background-color: #09111cff;
+    color: #fff;
+    appearance: none;
+    padding: 8px;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 8px center;
+    outline: none;
+  }
+
+  select option {
+    background-color: #09111cff;
+    color: #fff;
+    border: none;
+    outline: none;
+  }
+
+  select option:checked {
+    background-color: #09111cff;
+    outline: none; 
+  }
+}
+.grid-transaction-item-4 {
+  grid-area: box4;
+  button {
+    background: transparent;
+    border: none;
+    color: white;
+    height: 100%;
+    padding: 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition-duration: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+.grid-transaction-item-5 {
+  grid-area: box5;
+  text-align: center;
+  margin-bottom: -16px;
+}
