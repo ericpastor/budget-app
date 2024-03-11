@@ -35,7 +35,6 @@ export class SavingsComponent implements OnInit {
   public updateTarget() {
     if (this.updatedTarget !== undefined) {
       this.savingsService.updateTarget(this.updatedTarget);
-      console.log('Objetivo actualizado:', this.updatedTarget);
     }
   }
 

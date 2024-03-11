@@ -23,7 +23,6 @@ export class BalanceService {
   }
 
   public updateTotalAmount(newBalance: number): void {
-    console.log('Actualizando totalAmount:', newBalance);
     this.balance = newBalance;
     this.update();
   }
