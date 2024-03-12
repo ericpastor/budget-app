@@ -34,7 +34,7 @@ Once submitted you can see the panel.
 
 Always you can change the setup by clicking "Change your Savings Panel"
 
-<video controls src="box_1_2.mp4" title="Title" controls autoplay loop></video>
+![alt text](preview_budget_app.PNG) ![alt text](preview_budget_app_a.PNG)
 
 <hr>
 
@@ -44,15 +44,13 @@ Always you can change the setup by clicking "Change your Savings Panel"
 
 - Once you click on the green arrow it will appear the list of transactions below.
 
-<video controls src="box_3_4.mp4" title="Title" controls autoplay loop></video>
-
 <hr>
 
 - Box five "New transfer". Here is the place where you can transfer money to Savings and to Balance but only allowed if you have a sufficient amount to do it.
 
-<video controls src="box_5.mp4" title="Title" controls autoplay loop></video>
-
 <hr>
+
+![alt text](preview_budget_app_b.PNG)
 
 ## Service Component (managing the data)
 
