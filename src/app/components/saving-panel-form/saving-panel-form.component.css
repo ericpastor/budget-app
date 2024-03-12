@@ -14,7 +14,6 @@
 .grid-savings-item {
   display: flex;
   flex-direction: column;
-  /* border-radius: 0.75rem; */
   overflow: hidden;
   label {
     color: rgb(73, 88, 110);
